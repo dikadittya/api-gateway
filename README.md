@@ -1,4 +1,4 @@
-# Wedding API Gateway
+# Wedding BE API Gateway
 
 API Gateway menggunakan KrakenD untuk menjembatani tiga microservices dengan arsitektur **production-ready**:
 - **Auth API** - Authentication & Authorization Service (Nginx + PHP-FPM)
