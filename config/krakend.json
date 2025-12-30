@@ -247,14 +247,14 @@
       ]
     },
     {
-      "endpoint": "/generic/menus",
+      "endpoint": "/list-property",
       "method": "GET",
       "input_headers": ["Authorization"],
       "input_query_strings": ["*"],
       "output_encoding": "json",
       "backend": [
         {
-          "url_pattern": "/api/menus",
+          "url_pattern": "/api/list-property",
           "encoding": "json",
           "method": "GET",
           "host": ["http://nginx-generic"]
@@ -262,130 +262,16 @@
       ]
     },
     {
-      "endpoint": "/generic/menus/{id}",
+      "endpoint": "/data-busana",
       "method": "GET",
       "input_headers": ["Authorization"],
       "input_query_strings": ["*"],
       "output_encoding": "json",
       "backend": [
         {
-          "url_pattern": "/api/menus/{id}",
+          "url_pattern": "/api/data-busana",
           "encoding": "json",
           "method": "GET",
-          "host": ["http://nginx-generic"]
-        }
-      ]
-    },
-    {
-      "endpoint": "/generic/menus",
-      "method": "POST",
-      "input_headers": ["Authorization"],
-      "output_encoding": "json",
-      "backend": [
-        {
-          "url_pattern": "/api/menus",
-          "encoding": "json",
-          "method": "POST",
-          "host": ["http://nginx-generic"]
-        }
-      ]
-    },
-    {
-      "endpoint": "/generic/menus/{id}",
-      "method": "PUT",
-      "input_headers": ["Authorization"],
-      "output_encoding": "json",
-      "backend": [
-        {
-          "url_pattern": "/api/menus/{id}",
-          "encoding": "json",
-          "method": "PUT",
-          "host": ["http://nginx-generic"]
-        }
-      ]
-    },
-    {
-      "endpoint": "/generic/menus/{id}",
-      "method": "DELETE",
-      "input_headers": ["Authorization"],
-      "output_encoding": "json",
-      "backend": [
-        {
-          "url_pattern": "/api/menus/{id}",
-          "encoding": "json",
-          "method": "DELETE",
-          "host": ["http://nginx-generic"]
-        }
-      ]
-    },
-    {
-      "endpoint": "/generic/{resource}",
-      "method": "GET",
-      "input_headers": ["Authorization"],
-      "input_query_strings": ["*"],
-      "output_encoding": "json",
-      "backend": [
-        {
-          "url_pattern": "/api/{resource}",
-          "encoding": "json",
-          "method": "GET",
-          "host": ["http://nginx-generic"]
-        }
-      ]
-    },
-    {
-      "endpoint": "/generic/{resource}/{id}",
-      "method": "GET",
-      "input_headers": ["Authorization"],
-      "input_query_strings": ["*"],
-      "output_encoding": "json",
-      "backend": [
-        {
-          "url_pattern": "/api/{resource}/{id}",
-          "encoding": "json",
-          "method": "GET",
-          "host": ["http://nginx-generic"]
-        }
-      ]
-    },
-    {
-      "endpoint": "/generic/{resource}",
-      "method": "POST",
-      "input_headers": ["Authorization"],
-      "output_encoding": "json",
-      "backend": [
-        {
-          "url_pattern": "/api/{resource}",
-          "encoding": "json",
-          "method": "POST",
-          "host": ["http://nginx-generic"]
-        }
-      ]
-    },
-    {
-      "endpoint": "/generic/{resource}/{id}",
-      "method": "PUT",
-      "input_headers": ["Authorization"],
-      "output_encoding": "json",
-      "backend": [
-        {
-          "url_pattern": "/api/{resource}/{id}",
-          "encoding": "json",
-          "method": "PUT",
-          "host": ["http://nginx-generic"]
-        }
-      ]
-    },
-    {
-      "endpoint": "/generic/{resource}/{id}",
-      "method": "DELETE",
-      "input_headers": ["Authorization"],
-      "output_encoding": "json",
-      "backend": [
-        {
-          "url_pattern": "/api/{resource}/{id}",
-          "encoding": "json",
-          "method": "DELETE",
           "host": ["http://nginx-generic"]
         }
       ]

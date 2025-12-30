@@ -10,8 +10,17 @@ services:
       - ./config:/etc/krakend
     networks:
       - backend-network
+      - siwor-net
     restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=siwor-net"
+      - "traefik.http.routers.api-gateway.rule=Host(`api.lusiwedding.id`)"
+      - "traefik.http.routers.api-gateway.entrypoints=web"
+      - "traefik.http.services.api-gateway.loadbalancer.server.port=8080"
 
 networks:
   backend-network:
+    external: true
+  siwor-net:
     external: true
