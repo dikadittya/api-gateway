@@ -33,6 +33,7 @@
     {
       "endpoint": "/health",
       "method": "GET",
+      "input_query_strings": ["*"],
       "output_encoding": "json",
       "backend": [
         {
@@ -72,6 +73,7 @@
     {
       "endpoint": "/auth/logout",
       "method": "POST",
+      "input_headers": ["Authorization"],
       "output_encoding": "json",
       "backend": [
         {
@@ -85,6 +87,8 @@
     {
       "endpoint": "/auth/user",
       "method": "GET",
+      "input_headers": ["Authorization"],
+      "input_query_strings": ["*"],
       "output_encoding": "json",
       "backend": [
         {
@@ -98,6 +102,8 @@
     {
       "endpoint": "/auth/users",
       "method": "GET",
+      "input_headers": ["Authorization"],
+      "input_query_strings": ["*"],
       "output_encoding": "json",
       "backend": [
         {
@@ -111,6 +117,8 @@
     {
       "endpoint": "/auth/users/{id}",
       "method": "GET",
+      "input_headers": ["Authorization"],
+      "input_query_strings": ["*"],
       "output_encoding": "json",
       "backend": [
         {
@@ -124,6 +132,7 @@
     {
       "endpoint": "/auth/users",
       "method": "POST",
+      "input_headers": ["Authorization"],
       "output_encoding": "json",
       "backend": [
         {
@@ -137,6 +146,7 @@
     {
       "endpoint": "/auth/users/{id}",
       "method": "PUT",
+      "input_headers": ["Authorization"],
       "output_encoding": "json",
       "backend": [
         {
@@ -150,6 +160,7 @@
     {
       "endpoint": "/auth/users/{id}",
       "method": "DELETE",
+      "input_headers": ["Authorization"],
       "output_encoding": "json",
       "backend": [
         {
@@ -163,6 +174,8 @@
     {
       "endpoint": "/auth/roles",
       "method": "GET",
+      "input_headers": ["Authorization"],
+      "input_query_strings": ["*"],
       "output_encoding": "json",
       "backend": [
         {
@@ -176,6 +189,8 @@
     {
       "endpoint": "/auth/permissions",
       "method": "GET",
+      "input_headers": ["Authorization"],
+      "input_query_strings": ["*"],
       "output_encoding": "json",
       "backend": [
         {
@@ -217,28 +232,13 @@
       ]
     },
     {
-      "endpoint": "/memberso",
+      "endpoint": "/generic/menus",
       "method": "GET",
-      "cache_ttl": "0s",
-      "timeout": "10s",
-      "input_headers": ["*"],
+      "input_headers": ["Authorization"],
       "input_query_strings": ["*"],
       "output_encoding": "json",
       "backend": [
         {
-          "url_pattern": "/api/members",
-          "encoding": "json",
-          "method": "GET",
-          "host": ["nginx-auth"]
-        }
-      ]
-    },
-    {
-      "endpoint": "/generic/menus",
-      "method": "GET",
-      "output_encoding": "json",
-      "backend": [
-        {
           "url_pattern": "/api/menus",
           "encoding": "json",
           "method": "GET",
@@ -249,6 +249,8 @@
     {
       "endpoint": "/generic/menus/{id}",
       "method": "GET",
+      "input_headers": ["Authorization"],
+      "input_query_strings": ["*"],
       "output_encoding": "json",
       "backend": [
         {
@@ -262,6 +264,7 @@
     {
       "endpoint": "/generic/menus",
       "method": "POST",
+      "input_headers": ["Authorization"],
       "output_encoding": "json",
       "backend": [
         {
@@ -275,6 +278,7 @@
     {
       "endpoint": "/generic/menus/{id}",
       "method": "PUT",
+      "input_headers": ["Authorization"],
       "output_encoding": "json",
       "backend": [
         {
@@ -288,6 +292,7 @@
     {
       "endpoint": "/generic/menus/{id}",
       "method": "DELETE",
+      "input_headers": ["Authorization"],
       "output_encoding": "json",
       "backend": [
         {
@@ -301,6 +306,8 @@
     {
       "endpoint": "/generic/{resource}",
       "method": "GET",
+      "input_headers": ["Authorization"],
+      "input_query_strings": ["*"],
       "output_encoding": "json",
       "backend": [
         {
@@ -314,6 +321,8 @@
     {
       "endpoint": "/generic/{resource}/{id}",
       "method": "GET",
+      "input_headers": ["Authorization"],
+      "input_query_strings": ["*"],
       "output_encoding": "json",
       "backend": [
         {
@@ -327,6 +336,7 @@
     {
       "endpoint": "/generic/{resource}",
       "method": "POST",
+      "input_headers": ["Authorization"],
       "output_encoding": "json",
       "backend": [
         {
@@ -340,6 +350,7 @@
     {
       "endpoint": "/generic/{resource}/{id}",
       "method": "PUT",
+      "input_headers": ["Authorization"],
       "output_encoding": "json",
       "backend": [
         {
@@ -353,6 +364,7 @@
     {
       "endpoint": "/generic/{resource}/{id}",
       "method": "DELETE",
+      "input_headers": ["Authorization"],
       "output_encoding": "json",
       "backend": [
         {
@@ -366,6 +378,8 @@
     {
       "endpoint": "/transaction/{resource}",
       "method": "GET",
+      "input_headers": ["Authorization"],
+      "input_query_strings": ["*"],
       "output_encoding": "json",
       "backend": [
         {
@@ -379,6 +393,8 @@
     {
       "endpoint": "/transaction/{resource}/{id}",
       "method": "GET",
+      "input_headers": ["Authorization"],
+      "input_query_strings": ["*"],
       "output_encoding": "json",
       "backend": [
         {
@@ -392,6 +408,7 @@
     {
       "endpoint": "/transaction/{resource}",
       "method": "POST",
+      "input_headers": ["Authorization"],
       "output_encoding": "json",
       "backend": [
         {
@@ -405,6 +422,7 @@
     {
       "endpoint": "/transaction/{resource}/{id}",
       "method": "PUT",
+      "input_headers": ["Authorization"],
       "output_encoding": "json",
       "backend": [
         {
@@ -418,6 +436,7 @@
     {
       "endpoint": "/transaction/{resource}/{id}",
       "method": "DELETE",
+      "input_headers": ["Authorization"],
       "output_encoding": "json",
       "backend": [
         {
