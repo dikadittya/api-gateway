@@ -280,14 +280,14 @@
       ]
     },
     {
-      "endpoint": "/transaction/{resource}",
+      "endpoint": "/master/mua",
       "method": "GET",
       "input_headers": ["Authorization"],
       "input_query_strings": ["*"],
       "output_encoding": "json",
       "backend": [
         {
-          "url_pattern": "/api/{resource}",
+          "url_pattern": "/api/master/mua",
           "encoding": "json",
           "method": "GET",
           "host": ["http://nginx-transaction"]
@@ -295,14 +295,14 @@
       ]
     },
     {
-      "endpoint": "/transaction/{resource}/{id}",
+      "endpoint": "/master/jenis-item-paket",
       "method": "GET",
       "input_headers": ["Authorization"],
       "input_query_strings": ["*"],
       "output_encoding": "json",
       "backend": [
         {
-          "url_pattern": "/api/{resource}/{id}",
+          "url_pattern": "/api/master/jenis-item-paket",
           "encoding": "json",
           "method": "GET",
           "host": ["http://nginx-transaction"]
@@ -310,43 +310,16 @@
       ]
     },
     {
-      "endpoint": "/transaction/{resource}",
-      "method": "POST",
+      "endpoint": "/paket-items",
+      "method": "GET",
       "input_headers": ["Authorization"],
+      "input_query_strings": ["*"],
       "output_encoding": "json",
       "backend": [
         {
-          "url_pattern": "/api/{resource}",
+          "url_pattern": "/api/paket-items",
           "encoding": "json",
-          "method": "POST",
-          "host": ["http://nginx-transaction"]
-        }
-      ]
-    },
-    {
-      "endpoint": "/transaction/{resource}/{id}",
-      "method": "PUT",
-      "input_headers": ["Authorization"],
-      "output_encoding": "json",
-      "backend": [
-        {
-          "url_pattern": "/api/{resource}/{id}",
-          "encoding": "json",
-          "method": "PUT",
-          "host": ["http://nginx-transaction"]
-        }
-      ]
-    },
-    {
-      "endpoint": "/transaction/{resource}/{id}",
-      "method": "DELETE",
-      "input_headers": ["Authorization"],
-      "output_encoding": "json",
-      "backend": [
-        {
-          "url_pattern": "/api/{resource}/{id}",
-          "encoding": "json",
-          "method": "DELETE",
+          "method": "GET",
           "host": ["http://nginx-transaction"]
         }
       ]
