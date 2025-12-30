@@ -187,6 +187,53 @@
       ]
     },
     {
+      "endpoint": "/contohpost",
+      "method": "POST",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/contohpost",
+          "encoding": "json",
+          "method": "POST",
+          "host": ["http://nginx-auth"]
+        }
+      ]
+    },
+    {
+      "endpoint": "/members",
+      "method": "GET",
+      "cache_ttl": "0s",
+      "timeout": "10s",
+      "input_headers": ["*"],
+      "input_query_strings": ["*"],
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/members",
+          "encoding": "json",
+          "method": "GET",
+          "host": ["http://nginx-auth"]
+        }
+      ]
+    },
+    {
+      "endpoint": "/memberso",
+      "method": "GET",
+      "cache_ttl": "0s",
+      "timeout": "10s",
+      "input_headers": ["*"],
+      "input_query_strings": ["*"],
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/members",
+          "encoding": "json",
+          "method": "GET",
+          "host": ["nginx-auth"]
+        }
+      ]
+    },
+    {
       "endpoint": "/generic/menus",
       "method": "GET",
       "output_encoding": "json",
