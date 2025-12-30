@@ -41,7 +41,7 @@
       "backend": [
         {
           "url_pattern": "/",
-          "encoding": "no-op",
+          "encoding": "json",
           "method": "GET",
           "host": ["http://api-gateway:8080"]
         }
@@ -54,7 +54,7 @@
       "backend": [
         {
           "url_pattern": "/api/register",
-          "encoding": "no-op",
+          "encoding": "json",
           "method": "POST",
           "host": ["http://nginx-auth"]
         }
@@ -67,7 +67,7 @@
       "backend": [
         {
           "url_pattern": "/api/login",
-          "encoding": "no-op",
+          "encoding": "json",
           "method": "POST",
           "host": ["http://nginx-auth"]
         }
@@ -81,7 +81,7 @@
       "backend": [
         {
           "url_pattern": "/api/logout",
-          "encoding": "no-op",
+          "encoding": "json",
           "method": "POST",
           "host": ["http://nginx-auth"]
         }
@@ -96,7 +96,7 @@
       "backend": [
         {
           "url_pattern": "/api/me",
-          "encoding": "no-op",
+          "encoding": "json",
           "method": "GET",
           "host": ["http://nginx-auth"]
         }
@@ -111,7 +111,7 @@
       "backend": [
         {
           "url_pattern": "/api/user",
-          "encoding": "no-op",
+          "encoding": "json",
           "method": "GET",
           "host": ["http://nginx-auth"]
         }
@@ -126,7 +126,7 @@
       "backend": [
         {
           "url_pattern": "/api/users",
-          "encoding": "no-op",
+          "encoding": "json",
           "method": "GET",
           "host": ["http://nginx-auth"]
         }
@@ -141,7 +141,7 @@
       "backend": [
         {
           "url_pattern": "/api/users/{id}",
-          "encoding": "no-op",
+          "encoding": "json",
           "method": "GET",
           "host": ["http://nginx-auth"]
         }
@@ -155,7 +155,7 @@
       "backend": [
         {
           "url_pattern": "/api/users",
-          "encoding": "no-op",
+          "encoding": "json",
           "method": "POST",
           "host": ["http://nginx-auth"]
         }
@@ -169,7 +169,7 @@
       "backend": [
         {
           "url_pattern": "/api/users/{id}",
-          "encoding": "no-op",
+          "encoding": "json",
           "method": "PUT",
           "host": ["http://nginx-auth"]
         }
@@ -183,7 +183,7 @@
       "backend": [
         {
           "url_pattern": "/api/users/{id}",
-          "encoding": "no-op",
+          "encoding": "json",
           "method": "DELETE",
           "host": ["http://nginx-auth"]
         }
@@ -198,7 +198,7 @@
       "backend": [
         {
           "url_pattern": "/api/roles",
-          "encoding": "no-op",
+          "encoding": "json",
           "method": "GET",
           "host": ["http://nginx-auth"]
         }
@@ -213,7 +213,7 @@
       "backend": [
         {
           "url_pattern": "/api/permissions",
-          "encoding": "no-op",
+          "encoding": "json",
           "method": "GET",
           "host": ["http://nginx-auth"]
         }
@@ -226,7 +226,7 @@
       "backend": [
         {
           "url_pattern": "/api/contohpost",
-          "encoding": "no-op",
+          "encoding": "json",
           "method": "POST",
           "host": ["http://nginx-auth"]
         }
@@ -243,7 +243,7 @@
       "backend": [
         {
           "url_pattern": "/api/members",
-          "encoding": "no-op",
+          "encoding": "json",
           "method": "GET",
           "host": ["http://nginx-auth"]
         }
@@ -258,7 +258,7 @@
       "backend": [
         {
           "url_pattern": "/api/list-property",
-          "encoding": "no-op",
+          "encoding": "json",
           "method": "GET",
           "host": ["http://nginx-generic"]
         }
@@ -273,7 +273,7 @@
       "backend": [
         {
           "url_pattern": "/api/data-busana",
-          "encoding": "no-op",
+          "encoding": "json",
           "method": "GET",
           "host": ["http://nginx-generic"]
         }
@@ -288,7 +288,7 @@
       "backend": [
         {
           "url_pattern": "/api/{resource}",
-          "encoding": "no-op",
+          "encoding": "json",
           "method": "GET",
           "host": ["http://nginx-transaction"]
         }
@@ -303,7 +303,7 @@
       "backend": [
         {
           "url_pattern": "/api/{resource}/{id}",
-          "encoding": "no-op",
+          "encoding": "json",
           "method": "GET",
           "host": ["http://nginx-transaction"]
         }
@@ -317,7 +317,7 @@
       "backend": [
         {
           "url_pattern": "/api/{resource}",
-          "encoding": "no-op",
+          "encoding": "json",
           "method": "POST",
           "host": ["http://nginx-transaction"]
         }
@@ -331,7 +331,7 @@
       "backend": [
         {
           "url_pattern": "/api/{resource}/{id}",
-          "encoding": "no-op",
+          "encoding": "json",
           "method": "PUT",
           "host": ["http://nginx-transaction"]
         }
@@ -345,7 +345,7 @@
       "backend": [
         {
           "url_pattern": "/api/{resource}/{id}",
-          "encoding": "no-op",
+          "encoding": "json",
           "method": "DELETE",
           "host": ["http://nginx-transaction"]
         }
