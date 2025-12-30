@@ -1,0 +1,385 @@
+{
+  "$schema": "https://www.krakend.io/schema/v2.7/krakend.json",
+  "version": 3,
+  "name": "Wedding API Gateway",
+  "timeout": "30s",
+  "cache_ttl": "300s",
+  "output_encoding": "json",
+  "port": 8080,
+  "host": ["http://0.0.0.0:8080"],
+  "extra_config": {
+    "telemetry/logging": {
+      "level": "INFO",
+      "prefix": "[KRAKEND]",
+      "syslog": false,
+      "stdout": true
+    },
+    "security/cors": {
+      "allow_origins": ["*"],
+      "allow_methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+      "allow_headers": [
+        "Origin",
+        "Content-Type",
+        "Authorization",
+        "Accept",
+        "X-Requested-With"
+      ],
+      "expose_headers": ["Content-Length"],
+      "max_age": "12h",
+      "allow_credentials": true
+    }
+  },
+  "endpoints": [
+    {
+      "endpoint": "/health",
+      "method": "GET",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/",
+          "encoding": "json",
+          "method": "GET",
+          "host": ["http://api-gateway:8080"]
+        }
+      ]
+    },
+    {
+      "endpoint": "/auth/register",
+      "method": "POST",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/register",
+          "encoding": "json",
+          "method": "POST",
+          "host": ["http://nginx-auth"]
+        }
+      ]
+    },
+    {
+      "endpoint": "/auth/login",
+      "method": "POST",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/login",
+          "encoding": "json",
+          "method": "POST",
+          "host": ["http://nginx-auth"]
+        }
+      ]
+    },
+    {
+      "endpoint": "/auth/logout",
+      "method": "POST",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/logout",
+          "encoding": "json",
+          "method": "POST",
+          "host": ["http://nginx-auth"]
+        }
+      ]
+    },
+    {
+      "endpoint": "/auth/user",
+      "method": "GET",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/user",
+          "encoding": "json",
+          "method": "GET",
+          "host": ["http://nginx-auth"]
+        }
+      ]
+    },
+    {
+      "endpoint": "/auth/users",
+      "method": "GET",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/users",
+          "encoding": "json",
+          "method": "GET",
+          "host": ["http://nginx-auth"]
+        }
+      ]
+    },
+    {
+      "endpoint": "/auth/users/{id}",
+      "method": "GET",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/users/{id}",
+          "encoding": "json",
+          "method": "GET",
+          "host": ["http://nginx-auth"]
+        }
+      ]
+    },
+    {
+      "endpoint": "/auth/users",
+      "method": "POST",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/users",
+          "encoding": "json",
+          "method": "POST",
+          "host": ["http://nginx-auth"]
+        }
+      ]
+    },
+    {
+      "endpoint": "/auth/users/{id}",
+      "method": "PUT",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/users/{id}",
+          "encoding": "json",
+          "method": "PUT",
+          "host": ["http://nginx-auth"]
+        }
+      ]
+    },
+    {
+      "endpoint": "/auth/users/{id}",
+      "method": "DELETE",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/users/{id}",
+          "encoding": "json",
+          "method": "DELETE",
+          "host": ["http://nginx-auth"]
+        }
+      ]
+    },
+    {
+      "endpoint": "/auth/roles",
+      "method": "GET",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/roles",
+          "encoding": "json",
+          "method": "GET",
+          "host": ["http://nginx-auth"]
+        }
+      ]
+    },
+    {
+      "endpoint": "/auth/permissions",
+      "method": "GET",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/permissions",
+          "encoding": "json",
+          "method": "GET",
+          "host": ["http://nginx-auth"]
+        }
+      ]
+    },
+    {
+      "endpoint": "/generic/menus",
+      "method": "GET",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/menus",
+          "encoding": "json",
+          "method": "GET",
+          "host": ["http://nginx-generic"]
+        }
+      ]
+    },
+    {
+      "endpoint": "/generic/menus/{id}",
+      "method": "GET",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/menus/{id}",
+          "encoding": "json",
+          "method": "GET",
+          "host": ["http://nginx-generic"]
+        }
+      ]
+    },
+    {
+      "endpoint": "/generic/menus",
+      "method": "POST",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/menus",
+          "encoding": "json",
+          "method": "POST",
+          "host": ["http://nginx-generic"]
+        }
+      ]
+    },
+    {
+      "endpoint": "/generic/menus/{id}",
+      "method": "PUT",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/menus/{id}",
+          "encoding": "json",
+          "method": "PUT",
+          "host": ["http://nginx-generic"]
+        }
+      ]
+    },
+    {
+      "endpoint": "/generic/menus/{id}",
+      "method": "DELETE",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/menus/{id}",
+          "encoding": "json",
+          "method": "DELETE",
+          "host": ["http://nginx-generic"]
+        }
+      ]
+    },
+    {
+      "endpoint": "/generic/{resource}",
+      "method": "GET",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/{resource}",
+          "encoding": "json",
+          "method": "GET",
+          "host": ["http://nginx-generic"]
+        }
+      ]
+    },
+    {
+      "endpoint": "/generic/{resource}/{id}",
+      "method": "GET",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/{resource}/{id}",
+          "encoding": "json",
+          "method": "GET",
+          "host": ["http://nginx-generic"]
+        }
+      ]
+    },
+    {
+      "endpoint": "/generic/{resource}",
+      "method": "POST",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/{resource}",
+          "encoding": "json",
+          "method": "POST",
+          "host": ["http://nginx-generic"]
+        }
+      ]
+    },
+    {
+      "endpoint": "/generic/{resource}/{id}",
+      "method": "PUT",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/{resource}/{id}",
+          "encoding": "json",
+          "method": "PUT",
+          "host": ["http://nginx-generic"]
+        }
+      ]
+    },
+    {
+      "endpoint": "/generic/{resource}/{id}",
+      "method": "DELETE",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/{resource}/{id}",
+          "encoding": "json",
+          "method": "DELETE",
+          "host": ["http://nginx-generic"]
+        }
+      ]
+    },
+    {
+      "endpoint": "/transaction/{resource}",
+      "method": "GET",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/{resource}",
+          "encoding": "json",
+          "method": "GET",
+          "host": ["http://nginx-transaction"]
+        }
+      ]
+    },
+    {
+      "endpoint": "/transaction/{resource}/{id}",
+      "method": "GET",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/{resource}/{id}",
+          "encoding": "json",
+          "method": "GET",
+          "host": ["http://nginx-transaction"]
+        }
+      ]
+    },
+    {
+      "endpoint": "/transaction/{resource}",
+      "method": "POST",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/{resource}",
+          "encoding": "json",
+          "method": "POST",
+          "host": ["http://nginx-transaction"]
+        }
+      ]
+    },
+    {
+      "endpoint": "/transaction/{resource}/{id}",
+      "method": "PUT",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/{resource}/{id}",
+          "encoding": "json",
+          "method": "PUT",
+          "host": ["http://nginx-transaction"]
+        }
+      ]
+    },
+    {
+      "endpoint": "/transaction/{resource}/{id}",
+      "method": "DELETE",
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/{resource}/{id}",
+          "encoding": "json",
+          "method": "DELETE",
+          "host": ["http://nginx-transaction"]
+        }
+      ]
+    }
+  ]
+}
