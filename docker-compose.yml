@@ -10,10 +10,6 @@ services:
       - ./config:/etc/krakend
     networks:
       - backend-network
-    depends_on:
-      - nginx-auth
-      - nginx-generic
-      - nginx-transaction
     restart: unless-stopped
 
 networks:
