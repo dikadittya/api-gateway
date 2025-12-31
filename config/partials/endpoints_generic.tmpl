@@ -1,0 +1,100 @@
+{
+  "endpoint": "/master/provinsi",
+  "method": "GET",
+  "input_headers": ["Authorization"],
+  "input_query_strings": ["*"],
+  "output_encoding": "no-op",
+  "backend": [
+    {
+      "url_pattern": "/api/master-alamat/provinsiy",
+      "encoding": "json",
+      "method": "GET",
+      "host": ["{{ .hosts.generic }}"],
+      "extra_config": {
+        "backend/http": {
+          "return_error_code": true
+        }
+      }
+    }
+  ]
+},
+{
+  "endpoint": "/master/kabupaten",
+  "method": "GET",
+  "input_headers": ["Authorization"],
+  "input_query_strings": ["*"],
+  "output_encoding": "no-op",
+  "backend": [
+    {
+      "url_pattern": "/api/master-alamat/kabupaten",
+      "encoding": "json",
+      "method": "GET",
+      "host": ["{{ .hosts.generic }}"],
+      "extra_config": {
+        "backend/http": {
+          "return_error_code": true
+        }
+      }
+    }
+  ]
+},
+{
+  "endpoint": "/master/kecamatan",
+  "method": "GET",
+  "input_headers": ["Authorization"],
+  "input_query_strings": ["*"],
+  "output_encoding": "no-op",
+  "backend": [
+    {
+      "url_pattern": "/api/master-alamat/kecamatan",
+      "encoding": "json",
+      "method": "GET",
+      "host": ["{{ .hosts.generic }}"],
+      "extra_config": {
+        "backend/http": {
+          "return_error_code": true
+        }
+      }
+    }
+  ]
+},
+{
+  "endpoint": "/list-property",
+  "method": "GET",
+  "input_headers": ["Authorization"],
+  "input_query_strings": ["*"],
+  "output_encoding": "no-op",
+  "backend": [
+    {
+      "url_pattern": "/api/list-property",
+      "encoding": "json",
+      "method": "GET",
+      "host": ["{{ .hosts.generic }}"],
+      "extra_config": {
+        "backend/http": {
+          "return_error_code": true
+        }
+      }
+    }
+  ]
+},
+{
+  "endpoint": "/data-busana",
+  "method": "GET",
+  "input_headers": ["Authorization"],
+  "input_query_strings": ["*"],
+  "output_encoding": "no-op",
+  "backend": [
+    {
+      "url_pattern": "/api/data-busana",
+      "encoding": "json",
+      "method": "GET",
+      "host": ["{{ .hosts.generic }}"],
+      "extra_config": {
+        "backend/http": {
+          "return_error_code": true
+        }
+      }
+    }
+  ]
+}

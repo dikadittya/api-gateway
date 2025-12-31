@@ -1,0 +1,390 @@
+{
+  "endpoint": "/auth/register",
+  "method": "POST",
+  "output_encoding": "no-op",
+  "backend": [
+    {
+      "url_pattern": "/api/register",
+      "encoding": "json",
+      "method": "POST",
+      "host": ["{{ .hosts.auth }}"],
+      "extra_config": {
+        "backend/http": {
+          "return_error_code": true
+        }
+      }
+    }
+  ]
+},
+{
+  "endpoint": "/auth/login",
+  "method": "POST",
+  "output_encoding": "no-op",
+  "backend": [
+    {
+      "url_pattern": "/api/login",
+      "encoding": "json",
+      "method": "POST",
+      "host": ["{{ .hosts.auth }}"],
+      "extra_config": {
+        "backend/http": {
+          "return_error_code": true
+        }
+      }
+    }
+  ]
+},
+{
+  "endpoint": "/auth/logout",
+  "method": "POST",
+  "input_headers": ["Authorization"],
+  "output_encoding": "no-op",
+  "backend": [
+    {
+      "url_pattern": "/api/logout",
+      "encoding": "json",
+      "method": "POST",
+      "host": ["{{ .hosts.auth }}"],
+      "extra_config": {
+        "backend/http": {
+          "return_error_code": true
+        }
+      }
+    }
+  ]
+},
+{
+  "endpoint": "/auth/me",
+  "method": "GET",
+  "input_headers": ["Authorization"],
+  "input_query_strings": ["*"],
+  "output_encoding": "no-op",
+  "backend": [
+    {
+      "url_pattern": "/api/me",
+      "encoding": "json",
+      "method": "GET",
+      "host": ["{{ .hosts.auth }}"],
+      "extra_config": {
+        "backend/http": {
+          "return_error_code": true
+        }
+      }
+    }
+  ]
+},
+{
+  "endpoint": "/auth/user",
+  "method": "GET",
+  "input_headers": ["Authorization"],
+  "input_query_strings": ["*"],
+  "output_encoding": "no-op",
+  "backend": [
+    {
+      "url_pattern": "/api/user",
+      "encoding": "json",
+      "method": "GET",
+      "host": ["{{ .hosts.auth }}"],
+      "extra_config": {
+        "backend/http": {
+          "return_error_code": true
+        }
+      }
+    }
+  ]
+},
+{
+  "endpoint": "/auth/users",
+  "method": "GET",
+  "input_headers": ["Authorization"],
+  "input_query_strings": ["*"],
+  "output_encoding": "no-op",
+  "backend": [
+    {
+      "url_pattern": "/api/users",
+      "encoding": "json",
+      "method": "GET",
+      "host": ["{{ .hosts.auth }}"],
+      "extra_config": {
+        "backend/http": {
+          "return_error_code": true
+        }
+      }
+    }
+  ]
+},
+{
+  "endpoint": "/auth/users/{id}",
+  "method": "GET",
+  "input_headers": ["Authorization"],
+  "input_query_strings": ["*"],
+  "output_encoding": "no-op",
+  "backend": [
+    {
+      "url_pattern": "/api/users/{id}",
+      "encoding": "json",
+      "method": "GET",
+      "host": ["{{ .hosts.auth }}"],
+      "extra_config": {
+        "backend/http": {
+          "return_error_code": true
+        }
+      }
+    }
+  ]
+},
+{
+  "endpoint": "/auth/users",
+  "method": "POST",
+  "input_headers": ["Authorization"],
+  "output_encoding": "no-op",
+  "backend": [
+    {
+      "url_pattern": "/api/users",
+      "encoding": "json",
+      "method": "POST",
+      "host": ["{{ .hosts.auth }}"],
+      "extra_config": {
+        "backend/http": {
+          "return_error_code": true
+        }
+      }
+    }
+  ]
+},
+{
+  "endpoint": "/auth/users/{id}",
+  "method": "PUT",
+  "input_headers": ["Authorization"],
+  "output_encoding": "no-op",
+  "backend": [
+    {
+      "url_pattern": "/api/users/{id}",
+      "encoding": "json",
+      "method": "PUT",
+      "host": ["{{ .hosts.auth }}"],
+      "extra_config": {
+        "backend/http": {
+          "return_error_code": true
+        }
+      }
+    }
+  ]
+},
+{
+  "endpoint": "/auth/users/{id}",
+  "method": "DELETE",
+  "input_headers": ["Authorization"],
+  "output_encoding": "no-op",
+  "backend": [
+    {
+      "url_pattern": "/api/users/{id}",
+      "encoding": "json",
+      "method": "DELETE",
+      "host": ["{{ .hosts.auth }}"],
+      "extra_config": {
+        "backend/http": {
+          "return_error_code": true
+        }
+      }
+    }
+  ]
+},
+{
+  "endpoint": "/auth/roles",
+  "method": "GET",
+  "input_headers": ["Authorization"],
+  "input_query_strings": ["*"],
+  "output_encoding": "no-op",
+  "backend": [
+    {
+      "url_pattern": "/api/roles",
+      "encoding": "json",
+      "method": "GET",
+      "host": ["{{ .hosts.auth }}"],
+      "extra_config": {
+        "backend/http": {
+          "return_error_code": true
+        }
+      }
+    }
+  ]
+},
+{
+  "endpoint": "/auth/permissions",
+  "method": "GET",
+  "input_headers": ["Authorization"],
+  "input_query_strings": ["*"],
+  "output_encoding": "no-op",
+  "backend": [
+    {
+      "url_pattern": "/api/permissions",
+      "encoding": "json",
+      "method": "GET",
+      "host": ["{{ .hosts.auth }}"],
+      "extra_config": {
+        "backend/http": {
+          "return_error_code": true
+        }
+      }
+    }
+  ]
+},
+{
+  "endpoint": "/contohpost",
+  "method": "POST",
+  "output_encoding": "no-op",
+  "backend": [
+    {
+      "url_pattern": "/api/contohpost",
+      "encoding": "json",
+      "method": "POST",
+      "host": ["{{ .hosts.auth }}"],
+      "extra_config": {
+        "backend/http": {
+          "return_error_code": true
+        }
+      }
+    }
+  ]
+},
+{
+  "endpoint": "/members",
+  "method": "GET",
+  "cache_ttl": "0s",
+  "timeout": "10s",
+  "input_headers": ["Authorization", "Content-Type", "Accept"],
+  "input_query_strings": ["*"],
+  "output_encoding": "no-op",
+  "backend": [
+    {
+      "url_pattern": "/api/members",
+      "encoding": "json",
+      "method": "GET",
+      "host": ["{{ .hosts.auth }}"],
+      "extra_config": {
+        "backend/http": {
+          "return_error_code": true
+        }
+      }
+    }
+  ]
+},
+{
+  "endpoint": "/menus/sidebar",
+  "method": "GET",
+  "cache_ttl": "0s",
+  "timeout": "10s",
+  "input_headers": ["Authorization", "Content-Type", "Accept"],
+  "input_query_strings": ["*"],
+  "output_encoding": "no-op",
+  "backend": [
+    {
+      "url_pattern": "/api/menus/sidebar",
+      "encoding": "json",
+      "method": "GET",
+      "host": ["{{ .hosts.auth }}"],
+      "extra_config": {
+        "backend/http": {
+          "return_error_code": true
+        }
+      }
+    }
+  ]
+},
+{
+  "endpoint": "/data-alamat",
+  "method": "GET",
+  "input_headers": ["Authorization"],
+  "input_query_strings": ["*"],
+  "output_encoding": "no-op",
+  "backend": [
+    {
+      "url_pattern": "/api/data-alamat",
+      "encoding": "json",
+      "method": "GET",
+      "host": ["{{ .hosts.auth }}"],
+      "extra_config": {
+        "backend/http": {
+          "return_error_code": true
+        }
+      }
+    }
+  ]
+},
+{
+  "endpoint": "/data-alamat/{id}",
+  "method": "GET",
+  "input_headers": ["Authorization"],
+  "output_encoding": "no-op",
+  "backend": [
+    {
+      "url_pattern": "/api/data-alamat/{id}",
+      "encoding": "json",
+      "method": "GET",
+      "host": ["{{ .hosts.auth }}"],
+      "extra_config": {
+        "backend/http": {
+          "return_error_code": true
+        }
+      }
+    }
+  ]
+},
+{
+  "endpoint": "/data-alamat",
+  "method": "POST",
+  "input_headers": ["Authorization"],
+  "output_encoding": "no-op",
+  "backend": [
+    {
+      "url_pattern": "/api/data-alamat",
+      "encoding": "json",
+      "method": "POST",
+      "host": ["{{ .hosts.auth }}"],
+      "extra_config": {
+        "backend/http": {
+          "return_error_code": true
+        }
+      }
+    }
+  ]
+},
+{
+  "endpoint": "/data-alamat/{id}",
+  "method": "PUT",
+  "input_headers": ["Authorization"],
+  "output_encoding": "no-op",
+  "backend": [
+    {
+      "url_pattern": "/api/data-alamat/{id}",
+      "encoding": "json",
+      "method": "PUT",
+      "host": ["{{ .hosts.auth }}"],
+      "extra_config": {
+        "backend/http": {
+          "return_error_code": true
+        }
+      }
+    }
+  ]
+},
+{
+  "endpoint": "/data-alamat/{id}",
+  "method": "DELETE",
+  "input_headers": ["Authorization"],
+  "output_encoding": "no-op",
+  "backend": [
+    {
+      "url_pattern": "/api/data-alamat/{id}",
+      "encoding": "json",
+      "method": "DELETE",
+      "host": ["{{ .hosts.auth }}"],
+      "extra_config": {
+        "backend/http": {
+          "return_error_code": true
+        }
+      }
+    }
+  ]
+}

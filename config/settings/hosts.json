@@ -1,0 +1,8 @@
+{
+  "hosts": {
+    "auth": "http://nginx-auth",
+    "generic": "http://nginx-generic",
+    "transaction": "http://nginx-transaction",
+    "gateway": "http://api-gateway:8080"
+  }
+}
