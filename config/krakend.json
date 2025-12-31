@@ -46,7 +46,8 @@
           "host": ["http://api-gateway:8080"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias"
+              "return_error_details": "backend_alias",
+              "return_error_code": true
             }
           }
         }
@@ -64,7 +65,8 @@
           "host": ["http://nginx-auth"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias"
+              "return_error_details": "backend_alias",
+              "return_error_code": true
             }
           }
         }
@@ -82,7 +84,8 @@
           "host": ["http://nginx-auth"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias"
+              "return_error_details": "backend_alias",
+              "return_error_code": true
             }
           }
         }
@@ -101,7 +104,8 @@
           "host": ["http://nginx-auth"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias"
+              "return_error_details": "backend_alias",
+              "return_error_code": true
             }
           }
         }
@@ -121,7 +125,8 @@
           "host": ["http://nginx-auth"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias"
+              "return_error_details": "backend_alias",
+              "return_error_code": true
             }
           }
         }
@@ -141,7 +146,8 @@
           "host": ["http://nginx-auth"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias"
+              "return_error_details": "backend_alias",
+              "return_error_code": true
             }
           }
         }
@@ -161,7 +167,8 @@
           "host": ["http://nginx-auth"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias"
+              "return_error_details": "backend_alias",
+              "return_error_code": true
             }
           }
         }
@@ -181,7 +188,8 @@
           "host": ["http://nginx-auth"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias"
+              "return_error_details": "backend_alias",
+              "return_error_code": true
             }
           }
         }
@@ -200,7 +208,8 @@
           "host": ["http://nginx-auth"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias"
+              "return_error_details": "backend_alias",
+              "return_error_code": true
             }
           }
         }
@@ -219,7 +228,8 @@
           "host": ["http://nginx-auth"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias"
+              "return_error_details": "backend_alias",
+              "return_error_code": true
             }
           }
         }
@@ -238,7 +248,8 @@
           "host": ["http://nginx-auth"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias"
+              "return_error_details": "backend_alias",
+              "return_error_code": true
             }
           }
         }
@@ -258,7 +269,8 @@
           "host": ["http://nginx-auth"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias"
+              "return_error_details": "backend_alias",
+              "return_error_code": true
             }
           }
         }
@@ -278,7 +290,8 @@
           "host": ["http://nginx-auth"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias"
+              "return_error_details": "backend_alias",
+              "return_error_code": true
             }
           }
         }
@@ -296,7 +309,8 @@
           "host": ["http://nginx-auth"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias"
+              "return_error_details": "backend_alias",
+              "return_error_code": true
             }
           }
         }
@@ -318,7 +332,8 @@
           "host": ["http://nginx-auth"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias"
+              "return_error_details": "backend_alias",
+              "return_error_code": true
             }
           }
         }
@@ -340,7 +355,8 @@
           "host": ["http://nginx-auth"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias"
+              "return_error_details": "backend_alias",
+              "return_error_code": true
             }
           }
         }
@@ -366,7 +382,8 @@
           "host": ["http://nginx-generic"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias"
+              "return_error_details": "backend_alias",
+              "return_error_code": true
             }
           }
         }
@@ -386,7 +403,8 @@
           "host": ["http://nginx-generic"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias"
+              "return_error_details": "backend_alias",
+              "return_error_code": true
             }
           }
         }
@@ -414,7 +432,8 @@
           "host": ["http://nginx-transaction"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias"
+              "return_error_details": "backend_alias",
+              "return_error_code": true
             }
           }
         }
@@ -434,7 +453,8 @@
           "host": ["http://nginx-transaction"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias"
+              "return_error_details": "backend_alias",
+              "return_error_code": true
             }
           }
         }
@@ -454,7 +474,8 @@
           "host": ["http://nginx-transaction"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias"
+              "return_error_details": "backend_alias",
+              "return_error_code": true
             }
           }
         }
