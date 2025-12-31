@@ -237,7 +237,7 @@
       "method": "GET",
       "cache_ttl": "0s",
       "timeout": "10s",
-      "input_headers": ["*"],
+      "input_headers": ["Authorization", "Content-Type", "Accept"],
       "input_query_strings": ["*"],
       "output_encoding": "json",
       "backend": [
@@ -245,7 +245,12 @@
           "url_pattern": "/api/members",
           "encoding": "json",
           "method": "GET",
-          "host": ["http://nginx-auth"]
+          "host": ["http://nginx-auth"],
+          "extra_config": {
+            "backend/http": {
+              "return_error_details": "backend_alias"
+            }
+          }
         }
       ]
     },
@@ -254,7 +259,7 @@
       "method": "GET",
       "cache_ttl": "0s",
       "timeout": "10s",
-      "input_headers": ["*"],
+      "input_headers": ["Authorization", "Content-Type", "Accept"],
       "input_query_strings": ["*"],
       "output_encoding": "json",
       "backend": [
@@ -262,7 +267,12 @@
           "url_pattern": "/api/menus/sidebar",
           "encoding": "json",
           "method": "GET",
-          "host": ["http://nginx-auth"]
+          "host": ["http://nginx-auth"],
+          "extra_config": {
+            "backend/http": {
+              "return_error_details": "backend_alias"
+            }
+          }
         }
       ]
     },
@@ -309,7 +319,7 @@
 
 
 
-    
+
     {
       "endpoint": "/master/mua",
       "method": "GET",
