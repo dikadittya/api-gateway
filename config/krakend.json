@@ -46,8 +46,7 @@
           "host": ["http://api-gateway:8080"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias",
-              "return_error_code": true
+              "return_error_details": "backend_alias"
             }
           }
         }
@@ -75,7 +74,7 @@
     {
       "endpoint": "/auth/login",
       "method": "POST",
-      "output_encoding": "json",
+      "output_encoding": "no-op",
       "backend": [
         {
           "url_pattern": "/api/login",
@@ -84,7 +83,6 @@
           "host": ["http://nginx-auth"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias",
               "return_error_code": true
             }
           }
