@@ -114,7 +114,7 @@
       "method": "GET",
       "input_headers": ["Authorization"],
       "input_query_strings": ["*"],
-      "output_encoding": "json",
+      "output_encoding": "no-op",
       "backend": [
         {
           "url_pattern": "/api/me",
@@ -123,7 +123,6 @@
           "host": ["http://nginx-auth"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias",
               "return_error_code": true
             }
           }
