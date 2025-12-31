@@ -37,25 +37,20 @@
       "endpoint": "/health",
       "method": "GET",
       "input_query_strings": ["*"],
-      "output_encoding": "json",
+      "output_encoding": "no-op",
       "backend": [
         {
           "url_pattern": "/",
           "encoding": "json",
           "method": "GET",
-          "host": ["http://api-gateway:8080"],
-          "extra_config": {
-            "backend/http": {
-              "return_error_details": "backend_alias"
-            }
-          }
+          "host": ["http://api-gateway:8080"]
         }
       ]
     },
     {
       "endpoint": "/auth/register",
       "method": "POST",
-      "output_encoding": "json",
+      "output_encoding": "no-op",
       "backend": [
         {
           "url_pattern": "/api/register",
@@ -64,7 +59,6 @@
           "host": ["http://nginx-auth"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias",
               "return_error_code": true
             }
           }
@@ -93,7 +87,7 @@
       "endpoint": "/auth/logout",
       "method": "POST",
       "input_headers": ["Authorization"],
-      "output_encoding": "json",
+      "output_encoding": "no-op",
       "backend": [
         {
           "url_pattern": "/api/logout",
@@ -102,7 +96,6 @@
           "host": ["http://nginx-auth"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias",
               "return_error_code": true
             }
           }
@@ -134,7 +127,7 @@
       "method": "GET",
       "input_headers": ["Authorization"],
       "input_query_strings": ["*"],
-      "output_encoding": "json",
+      "output_encoding": "no-op",
       "backend": [
         {
           "url_pattern": "/api/user",
@@ -143,7 +136,6 @@
           "host": ["http://nginx-auth"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias",
               "return_error_code": true
             }
           }
@@ -155,7 +147,7 @@
       "method": "GET",
       "input_headers": ["Authorization"],
       "input_query_strings": ["*"],
-      "output_encoding": "json",
+      "output_encoding": "no-op",
       "backend": [
         {
           "url_pattern": "/api/users",
@@ -164,7 +156,6 @@
           "host": ["http://nginx-auth"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias",
               "return_error_code": true
             }
           }
@@ -176,7 +167,7 @@
       "method": "GET",
       "input_headers": ["Authorization"],
       "input_query_strings": ["*"],
-      "output_encoding": "json",
+      "output_encoding": "no-op",
       "backend": [
         {
           "url_pattern": "/api/users/{id}",
@@ -185,7 +176,6 @@
           "host": ["http://nginx-auth"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias",
               "return_error_code": true
             }
           }
@@ -196,7 +186,7 @@
       "endpoint": "/auth/users",
       "method": "POST",
       "input_headers": ["Authorization"],
-      "output_encoding": "json",
+      "output_encoding": "no-op",
       "backend": [
         {
           "url_pattern": "/api/users",
@@ -205,7 +195,6 @@
           "host": ["http://nginx-auth"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias",
               "return_error_code": true
             }
           }
@@ -216,7 +205,7 @@
       "endpoint": "/auth/users/{id}",
       "method": "PUT",
       "input_headers": ["Authorization"],
-      "output_encoding": "json",
+      "output_encoding": "no-op",
       "backend": [
         {
           "url_pattern": "/api/users/{id}",
@@ -225,7 +214,6 @@
           "host": ["http://nginx-auth"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias",
               "return_error_code": true
             }
           }
@@ -236,7 +224,7 @@
       "endpoint": "/auth/users/{id}",
       "method": "DELETE",
       "input_headers": ["Authorization"],
-      "output_encoding": "json",
+      "output_encoding": "no-op",
       "backend": [
         {
           "url_pattern": "/api/users/{id}",
@@ -245,7 +233,6 @@
           "host": ["http://nginx-auth"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias",
               "return_error_code": true
             }
           }
@@ -257,7 +244,7 @@
       "method": "GET",
       "input_headers": ["Authorization"],
       "input_query_strings": ["*"],
-      "output_encoding": "json",
+      "output_encoding": "no-op",
       "backend": [
         {
           "url_pattern": "/api/roles",
@@ -266,7 +253,6 @@
           "host": ["http://nginx-auth"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias",
               "return_error_code": true
             }
           }
@@ -278,7 +264,7 @@
       "method": "GET",
       "input_headers": ["Authorization"],
       "input_query_strings": ["*"],
-      "output_encoding": "json",
+      "output_encoding": "no-op",
       "backend": [
         {
           "url_pattern": "/api/permissions",
@@ -287,7 +273,6 @@
           "host": ["http://nginx-auth"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias",
               "return_error_code": true
             }
           }
@@ -297,7 +282,7 @@
     {
       "endpoint": "/contohpost",
       "method": "POST",
-      "output_encoding": "json",
+      "output_encoding": "no-op",
       "backend": [
         {
           "url_pattern": "/api/contohpost",
@@ -306,7 +291,6 @@
           "host": ["http://nginx-auth"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias",
               "return_error_code": true
             }
           }
@@ -320,7 +304,7 @@
       "timeout": "10s",
       "input_headers": ["Authorization", "Content-Type", "Accept"],
       "input_query_strings": ["*"],
-      "output_encoding": "json",
+      "output_encoding": "no-op",
       "backend": [
         {
           "url_pattern": "/api/members",
@@ -329,7 +313,6 @@
           "host": ["http://nginx-auth"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias",
               "return_error_code": true
             }
           }
@@ -343,7 +326,7 @@
       "timeout": "10s",
       "input_headers": ["Authorization", "Content-Type", "Accept"],
       "input_query_strings": ["*"],
-      "output_encoding": "json",
+      "output_encoding": "no-op",
       "backend": [
         {
           "url_pattern": "/api/menus/sidebar",
@@ -352,7 +335,6 @@
           "host": ["http://nginx-auth"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias",
               "return_error_code": true
             }
           }
@@ -370,7 +352,7 @@
       "method": "GET",
       "input_headers": ["Authorization"],
       "input_query_strings": ["*"],
-      "output_encoding": "json",
+      "output_encoding": "no-op",
       "backend": [
         {
           "url_pattern": "/api/list-property",
@@ -379,7 +361,6 @@
           "host": ["http://nginx-generic"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias",
               "return_error_code": true
             }
           }
@@ -391,7 +372,7 @@
       "method": "GET",
       "input_headers": ["Authorization"],
       "input_query_strings": ["*"],
-      "output_encoding": "json",
+      "output_encoding": "no-op",
       "backend": [
         {
           "url_pattern": "/api/data-busana",
@@ -400,7 +381,6 @@
           "host": ["http://nginx-generic"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias",
               "return_error_code": true
             }
           }
@@ -420,7 +400,7 @@
       "method": "GET",
       "input_headers": ["Authorization"],
       "input_query_strings": ["*"],
-      "output_encoding": "json",
+      "output_encoding": "no-op",
       "backend": [
         {
           "url_pattern": "/api/master/mua",
@@ -429,7 +409,6 @@
           "host": ["http://nginx-transaction"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias",
               "return_error_code": true
             }
           }
@@ -441,7 +420,7 @@
       "method": "GET",
       "input_headers": ["Authorization"],
       "input_query_strings": ["*"],
-      "output_encoding": "json",
+      "output_encoding": "no-op",
       "backend": [
         {
           "url_pattern": "/api/master/jenis-item-paket",
@@ -450,7 +429,6 @@
           "host": ["http://nginx-transaction"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias",
               "return_error_code": true
             }
           }
@@ -462,7 +440,7 @@
       "method": "GET",
       "input_headers": ["Authorization"],
       "input_query_strings": ["*"],
-      "output_encoding": "json",
+      "output_encoding": "no-op",
       "backend": [
         {
           "url_pattern": "/api/paket-items",
@@ -471,7 +449,6 @@
           "host": ["http://nginx-transaction"],
           "extra_config": {
             "backend/http": {
-              "return_error_details": "backend_alias",
               "return_error_code": true
             }
           }
