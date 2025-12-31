@@ -231,24 +231,6 @@
   ]
 },
 {
-  "endpoint": "/contohpost",
-  "method": "POST",
-  "output_encoding": "no-op",
-  "backend": [
-    {
-      "url_pattern": "/api/contohpost",
-      "encoding": "json",
-      "method": "POST",
-      "host": ["{{ .hosts.auth }}"],
-      "extra_config": {
-        "backend/http": {
-          "return_error_code": true
-        }
-      }
-    }
-  ]
-},
-{
   "endpoint": "/members",
   "method": "GET",
   "cache_ttl": "0s",

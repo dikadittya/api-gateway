@@ -57,4 +57,42 @@
       }
     }
   ]
+},
+{
+  "endpoint": "/paket-items",
+  "method": "POST",
+  "output_encoding": "no-op",
+  "backend": [
+    {
+      "url_pattern": "/api/paket-items",
+      "encoding": "json",
+      "method": "POST",
+      "host": ["{{ .hosts.transaction }}"],
+      "extra_config": {
+        "backend/http": {
+          "return_error_code": true
+        }
+      }
+    }
+  ]
+},
+{
+  "endpoint": "master/item-paket",
+  "method": "GET",
+  "input_headers": ["Authorization"],
+  "input_query_strings": ["*"],
+  "output_encoding": "no-op",
+  "backend": [
+    {
+      "url_pattern": "/api/master/item-paket",
+      "encoding": "json",
+      "method": "GET",
+      "host": ["{{ .hosts.transaction }}"],
+      "extra_config": {
+        "backend/http": {
+          "return_error_code": true
+        }
+      }
+    }
+  ]
 }
