@@ -250,6 +250,29 @@
       ]
     },
     {
+      "endpoint": "/menus/sidebar",
+      "method": "GET",
+      "cache_ttl": "0s",
+      "timeout": "10s",
+      "input_headers": ["*"],
+      "input_query_strings": ["*"],
+      "output_encoding": "json",
+      "backend": [
+        {
+          "url_pattern": "/api/menus/sidebar",
+          "encoding": "json",
+          "method": "GET",
+          "host": ["http://nginx-auth"]
+        }
+      ]
+    },
+
+
+
+
+
+
+    {
       "endpoint": "/list-property",
       "method": "GET",
       "input_headers": ["Authorization"],
@@ -279,6 +302,14 @@
         }
       ]
     },
+
+
+
+
+
+
+
+    
     {
       "endpoint": "/master/mua",
       "method": "GET",
