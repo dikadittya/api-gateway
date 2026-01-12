@@ -95,4 +95,62 @@
       }
     }
   ]
+},
+{
+  "endpoint": "job-booking",
+  "method": "GET",
+  "input_headers": ["Authorization"],
+  "input_query_strings": ["*"],
+  "output_encoding": "no-op",
+  "backend": [
+    {
+      "url_pattern": "/api/job-booking",
+      "encoding": "json",
+      "method": "GET",
+      "host": ["{{ .hosts.transaction }}"],
+      "extra_config": {
+        "backend/http": {
+          "return_error_code": true
+        }
+      }
+    }
+  ]
+},
+{
+  "endpoint": "job-booking/{id}",
+  "method": "GET",
+  "input_headers": ["Authorization"],
+  "input_query_strings": ["*"],
+  "output_encoding": "no-op",
+  "backend": [
+    {
+      "url_pattern": "/api/job-booking/{id}",
+      "encoding": "json",
+      "method": "GET",
+      "host": ["{{ .hosts.transaction }}"],
+      "extra_config": {
+        "backend/http": {
+          "return_error_code": true
+        }
+      }
+    }
+  ]
+},
+{
+  "endpoint": "/job-booking",
+  "method": "POST",
+  "output_encoding": "no-op",
+  "backend": [
+    {
+      "url_pattern": "/api/job-booking",
+      "encoding": "json",
+      "method": "POST",
+      "host": ["{{ .hosts.transaction }}"],
+      "extra_config": {
+        "backend/http": {
+          "return_error_code": true
+        }
+      }
+    }
+  ]
 }
