@@ -239,6 +239,26 @@
   ]
 },
 {
+  "endpoint": "/list-item-dokumentasi",
+  "method": "GET",
+  "input_headers": ["Authorization"],
+  "input_query_strings": ["*"],
+  "output_encoding": "no-op",
+  "backend": [
+    {
+      "url_pattern": "/api/list-item-dokumentasi",
+      "encoding": "json",
+      "method": "GET",
+      "host": ["{{ .hosts.generic }}"],
+      "extra_config": {
+        "backend/http": {
+          "return_error_code": true
+        }
+      }
+    }
+  ]
+},
+{
   "endpoint": "/list-item-entertain",
   "method": "GET",
   "input_headers": ["Authorization"],
