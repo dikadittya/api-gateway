@@ -153,4 +153,22 @@
       }
     }
   ]
+},
+{
+  "endpoint": "/job-data",
+  "method": "POST",
+  "output_encoding": "no-op",
+  "backend": [
+    {
+      "url_pattern": "/api/job-data",
+      "encoding": "json",
+      "method": "POST",
+      "host": ["{{ .hosts.transaction }}"],
+      "extra_config": {
+        "backend/http": {
+          "return_error_code": true
+        }
+      }
+    }
+  ]
 }
