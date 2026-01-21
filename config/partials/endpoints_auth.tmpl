@@ -1,10 +1,10 @@
 {
-  "endpoint": "/auth/register",
+  "endpoint": "/auth/refresh-token",
   "method": "POST",
   "output_encoding": "no-op",
   "backend": [
     {
-      "url_pattern": "/api/register",
+      "url_pattern": "/api/refresh-token",
       "encoding": "json",
       "method": "POST",
       "host": ["{{ .hosts.auth }}"],

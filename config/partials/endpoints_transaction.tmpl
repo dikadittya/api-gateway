@@ -171,4 +171,101 @@
       }
     }
   ]
+},
+{
+  "endpoint": "/paket",
+  "method": "GET",
+  "input_headers": ["Authorization"],
+  "input_query_strings": ["*"],
+  "output_encoding": "no-op",
+  "backend": [
+    {
+      "url_pattern": "/api/paket",
+      "encoding": "json",
+      "method": "GET",
+      "host": ["{{ .hosts.transaction }}"],
+      "extra_config": {
+        "backend/http": {
+          "return_error_code": true
+        }
+      }
+    }
+  ]
+},
+{
+  "endpoint": "/paket",
+  "method": "POST",
+  "input_headers": ["Authorization"],
+  "output_encoding": "no-op",
+  "backend": [
+    {
+      "url_pattern": "/api/paket",
+      "encoding": "json",
+      "method": "POST",
+      "host": ["{{ .hosts.transaction }}"],
+      "extra_config": {
+        "backend/http": {
+          "return_error_code": true
+        }
+      }
+    }
+  ]
+},
+{
+  "endpoint": "/paket/{id}",
+  "method": "GET",
+  "input_headers": ["Authorization"],
+  "input_query_strings": ["*"],
+  "output_encoding": "no-op",
+  "backend": [
+    {
+      "url_pattern": "/api/paket/{id}",
+      "encoding": "json",
+      "method": "GET",
+      "host": ["{{ .hosts.transaction }}"],
+      "extra_config": {
+        "backend/http": {
+          "return_error_code": true
+        }
+      }
+    }
+  ]
+},
+{
+  "endpoint": "/paket/{id}",
+  "method": "PUT",
+  "input_headers": ["Authorization"],
+  "output_encoding": "no-op",
+  "backend": [
+    {
+      "url_pattern": "/api/paket/{id}",
+      "encoding": "json",
+      "method": "PUT",
+      "host": ["{{ .hosts.transaction }}"],
+      "extra_config": {
+        "backend/http": {
+          "return_error_code": true
+        }
+      }
+    }
+  ]
+},
+{
+  "endpoint": "/paket/{id}",
+  "method": "DELETE",
+  "input_headers": ["Authorization"],
+  "output_encoding": "no-op",
+  "backend": [
+    {
+      "url_pattern": "/api/paket/{id}",
+      "encoding": "json",
+      "method": "DELETE",
+      "host": ["{{ .hosts.transaction }}"],
+      "extra_config": {
+        "backend/http": {
+          "return_error_code": true
+        }
+      }
+    }
+  ]
 }
